@@ -1,0 +1,136 @@
+
+############################################
+# 1. ENVIRONMENT & SECRETS (CRITICAL)      #
+############################################
+
+.env                # Local environment variables (API keys, DB credentials)
+.env.*              # Environment variants (.env.dev, .env.prod, etc.)
+!.env.example       # Template file shared with team (no secrets)
+
+*.pem               # Private keys / certificates (SSH, TLS)
+*.key               # Encryption keys (critical secrets)
+*.crt               # Certificates (may contain sensitive infra info)
+*.p12               # Certificate bundles (often include private keys)
+
+secrets.*           # Accidentally named secret dumps
+credentials.*       # Credential exports / auth files
+*.envrc             # direnv environment files (often contain secrets)
+
+
+############################################
+# 2. PYTHON RUNTIME ARTIFACTS              #
+############################################
+
+__pycache__/        # Python bytecode cache
+*.pyc
+*.py[cod]           # Compiled Python files
+*.pyo               # Optimized bytecode
+*.pyd               # Windows compiled extensions
+
+venv/               # Virtual environment (local dependencies)
+.venv/
+env/
+ENV/
+
+build/              # Packaging build artifacts (temporary staging)
+dist/               # Distribution packages (.whl, .tar.gz)
+*.egg-info/         # Python package metadata
+.eggs/              # Temporary build output
+
+
+############################################
+# 3. IDE / PYCHARM / EDITORS               #
+############################################
+
+.idea/              # PyCharm project configuration
+.idea/*
+*.iml               # IntelliJ module files
+runConfigurations/  # Local run/debug configs
+
+*~                  # Editor backup files
+*.bak               # Manual backup files
+
+
+############################################
+# 4. JUPYTER NOTEBOOKS                     #
+############################################
+
+.ipynb_checkpoints/ # Auto-saved notebook checkpoints
+**/.ipynb_checkpoints/
+**/.ipynb_checkpoints/*
+
+
+############################################
+# 5. LOGS & TEMP FILES                     #
+############################################
+
+*.log               # Application logs (may contain sensitive runtime data)
+/logs/
+
+
+*.tmp               # Temporary runtime files
+*.swp               # Vim swap files
+*.dump              # Debug/memory dumps
+
+
+############################################
+# 6. DATABASE (POSTGRES / DATA EXPORTS)    #
+############################################
+
+*.sql               # SQL dumps (can include production data)
+*.backup            # Database backups
+*.dump              # Database exports
+
+.pgpass             # PostgreSQL auth file (VERY sensitive)
+pgdata/             # Local Postgres data directory
+
+*.csv               # Local exports (often sensitive in ops/data teams)
+*.parquet           # Processed datasets
+src/data/
+/nltk_data/
+nltk_data/
+src/notebooks/
+
+############################################
+# 7. TESTING / QUALITY / TOOLING           #
+############################################
+
+.pytest_cache/      # Pytest cache
+.coverage           # Test coverage output
+htmlcov/            # Coverage HTML reports
+
+.mypy_cache/        # Static type checker cache
+.ruff_cache/        # Linter cache
+.tox/               # Test environment builds
+
+coverage.xml        # CI coverage reports
+*.prof              # Profiling outputs
+
+
+############################################
+# 8. FASTAPI / BACKEND RUNTIME             #
+############################################
+
+*.pid               # Process ID files
+*.sock              # Unix socket files
+
+
+############################################
+# 9. DOCKER / INFRASTRUCTURE / CLOUD       #
+############################################
+
+docker-compose.override.yml  # Local overrides (must not affect shared env)
+.docker.env         # Docker-specific env files
+
+.do/                # DigitalOcean CLI state/config
+.aws/               # AWS CLI credentials/config
+.gcloud/            # Google Cloud CLI config
+
+
+############################################
+# 10. OPERATING SYSTEM FILES               #
+############################################
+
+.DS_Store           # macOS Finder metadata
+Thumbs.db           # Windows thumbnail cache
+desktop.ini         # Windows folder configuration
