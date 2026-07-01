@@ -15,7 +15,7 @@
 secrets.*           # Accidentally named secret dumps
 credentials.*       # Credential exports / auth files
 *.envrc             # direnv environment files (often contain secrets)
-
+/figures/
 
 ############################################
 # 2. PYTHON RUNTIME ARTIFACTS              #
@@ -90,7 +90,7 @@ src/data/
 /nltk_data/
 nltk_data/
 src/notebooks/
-
+report.docx
 ############################################
 # 7. TESTING / QUALITY / TOOLING           #
 ############################################
