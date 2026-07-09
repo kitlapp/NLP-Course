@@ -71,7 +71,7 @@ runConfigurations/  # Local run/debug configs
 *.tmp               # Temporary runtime files
 *.swp               # Vim swap files
 *.dump              # Debug/memory dumps
-
+/backup/
 
 ############################################
 # 6. DATABASE (POSTGRES / DATA EXPORTS)    #
