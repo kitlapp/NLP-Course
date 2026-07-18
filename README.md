@@ -22,10 +22,11 @@ selected as the most efficient method. The output uploads to Google Drive are ta
 for the input reading in the beginning of each notebook. Normally, all notebooks have to be executed smoothly, without
 manual intervention, nor any path handling.
 
-**ASSUMPTIONS:** The executor must have access to the shared Google Drive folder. Public folder sharing is avoided, 
-even for non-sensitive data, to follow basic security practices. Assuming that the Google Drive folder is shared with 
-user "X" using the email account "X", the user must open and execute the Colab notebooks using the same Google Account 
-associated with that email.
+**ASSUMPTIONS:** The executor must have access to the shared Google Drive folder. Assuming that the Google Drive folder 
+is shared with user "X" using the email account "X", the user must open and execute the Colab notebooks using the same 
+Google Account associated with email "X". Also, the shared dataset folder should be available inside the user's Google 
+Drive root directory, i.e., My Drive. If the shared data folder cannot be seen in the Google Drive root, find it under 
+the "Shared with me" section, right-click it → Organize → Add shortcut → All locations → My Drive → Add.
 
 ## Files
 
