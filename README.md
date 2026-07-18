@@ -2,24 +2,71 @@
 
 ## Dataset Description
 
-The dataset focuses on drug ratings and contains a free-text user review column, along with three rating dimensions: Satisfaction, Effectiveness, and Ease of Use.
+The dataset focuses on drug ratings and contains a free-text user review column, along with three rating dimensions: 
+Satisfaction, Effectiveness, and Ease of Use.
+
+## Reproduce the Project
+
+To execute the project's notebooks, a venv setup is not needed because Google Colab VMs handle the required environment 
+successfully. In some cases, such as the `gensim` library, manual installation is required. These installations are 
+included in the execution flow, inside code cells, and do not require any manual intervention from the executor.
+
+Regarding file reading, proper path handling is achieved by leveraging `kagglehub` mechanics and the `pathlib` module. 
+The raw data is read directly from Kaggle without any manual path configuration. This approach was tested during the 
+migration of the notebook from local Jupyter Lab to Google Colab, where the raw dataset was successfully retrieved and 
+loaded. This selection improves the project's reproducibility, as updates to the dataset page in Kaggle can be 
+reflected in the notebooks when the dataset is retrieved again.
+
+For dataset exchange between the notebooks of this project, Google Drive sharing with appropriate permissions is 
+selected as the most efficient method. The output uploads to Google Drive are taking place automatically. The same holds 
+for the input reading in the beginning of each notebook. Normally, all notebooks have to be executed smoothly, without
+manual intervention, nor any path handling.
+
+**ASSUMPTIONS:** The executor must have access to the shared Google Drive folder. Public folder sharing is avoided, 
+even for non-sensitive data, to follow basic security practices. Assuming that the Google Drive folder is shared with 
+user "X" using the email account "X", the user must open and execute the Colab notebooks using the same Google Account 
+associated with that email.
 
 ## Files
 
 1. `pr_01_data_collection_and_preprocessing.ipynb`
-   Jupyter notebook containing the data collection, exploratory analysis, preprocessing, and feature engineering steps.
+   Notebook containing the data collection, exploratory analysis, preprocessing, and feature engineering steps.
 
 2. The above notebook produces three final datasets, which are shared through Google Drive due to their size:
 
-   https://drive.google.com/drive/folders/1spDsOxCQ2BARxbTrWTqTPRZEXoxvlDtl?usp=drive_link
-
    a. `df_analytics_final.parquet`
-   Dataset containing valid observations that do not provide meaningful textual information for NLP tasks, preserved for potential future analytical work.
+   Dataset containing valid observations that do not provide meaningful textual information for NLP tasks, 
+   preserved for potential future analytical work.
 
    b. `df_lem_final.parquet`
-   NLP-ready dataset with lemmatized reviews, suitable for classical NLP techniques such as Bag of Words, TF-IDF, and traditional machine learning models.
+   NLP-ready dataset with lemmatized reviews, suitable for classical NLP techniques such as Bag of Words, TF-IDF, and 
+   traditional machine learning models.
 
    c. `df_non_lem_final.parquet`
-   NLP-ready dataset with non-lemmatized reviews, suitable for modern NLP approaches, including deep learning and transformer-based models.
+   NLP-ready dataset with non-lemmatized reviews, suitable for modern NLP approaches, including deep learning and 
+   transformer-based models.
+
+3. `pr_02_feature_engineering_embeddings.ipynb`
+   Notebook containing text feature engineering, including TF-IDF representation, Word2Vec embedding training, and 
+   related feature analysis/visualizations.
+
+4. The above notebook produces the following feature engineering outputs, which are shared through Google Drive:
+
+   a. `tfidf_matrix.npz`
+   Sparse matrix containing the TF-IDF representation of the processed reviews. This representation is suitable for 
+   traditional NLP techniques and machine learning models.
+
+   b. `tfidf_vectorizer.joblib`
+   Saved TF-IDF vectorizer containing the vocabulary and transformation parameters required to reproduce the TF-IDF 
+   representation on the same or new text data.
+
+   c. `word2vec_model.model`
+   Trained Word2Vec model containing dense word embeddings learned from the review corpus. These embeddings can be 
+   used for NLP tasks requiring semantic word representations.
+
+5. `pr_03_unsupervised_learning.ipynb`
+   Notebook containing unsupervised learning techniques for topic discovery, including topic modeling approaches such 
+   as Latent Dirichlet Allocation (LDA) and Non-negative Matrix Factorization (NMF), along with topic analysis, 
+   visualization, and interpretation of the extracted topics.
 
 
