@@ -70,4 +70,10 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
    as Latent Dirichlet Allocation (LDA) and Non-negative Matrix Factorization (NMF), along with topic analysis, 
    visualization, and interpretation of the extracted topics.
 
+6. `pr_04_supervised_learning_xai.ipynb`
+   Notebook containing supervised learning approaches for drug review classification. Different machine learning and 
+   deep learning models are applied, including Logistic Regression, Support Vector Machine (SVM), Word2Vec-based 
+   classification, LSTM, and transformer-based models. The notebook focuses on training and evaluating the models, 
+   comparing their performance, and discussing the results obtained from the different approaches.
+
 
