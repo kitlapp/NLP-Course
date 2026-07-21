@@ -75,5 +75,28 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
    deep learning models are applied, including Logistic Regression, Support Vector Machine (SVM), Word2Vec-based 
    classification, LSTM, and transformer-based models. The notebook focuses on training and evaluating the models, 
    comparing their performance, and discussing the results obtained from the different approaches.
+   
+8. `pr_042_RAG.ipynb`
+   Notebook implements a Retrieval-Augmented Generation (RAG) pipeline for conversational AI by adapting the drug
+   reviews dataset for similarity-based question-answering. It builds a vector database using dense sentence embeddings
+   through the pretrained HF model 'BAAI/bge-small-en-v1.5' and FAISS as a vector database to store the embeddings alongside
+   with an index to perform similarity searches.
+   A pre-trained causal language model "Qwen/Qwen3.5-0.8B" is used to generate responses from the most relevant
+   embedding retrieved.
+   Prompt engineering guidelines were utilized in order to set the guard rails on the usage of metadata, ratings, and
+   specific side-effect fields.
+   Finally, the notebook evaluates how well the RAG system synthesizes the responses and addresses retrieval sample biases
+   against ground-truth data derived from the dataframe itself through Pandas.
+
+   From this notebook the following files are produced and saved in shared Google Drive folder "nlp_project_data":
+   
+   a. 'review_embeddings_<model>.npy'
+      Embeddings of reviews
+   b. 'review_index_<model>.faiss'
+      FAISS Indexes of the review embeddings 
+   c. directory 'my_rag_eval_dataset'
+      Files for the dataset created by RAGAS with the data to be analyzed
+   d. 'rag_evaluation_results.xlsx'
+      The excel file with the RAGAS evaluation results 
 
 
