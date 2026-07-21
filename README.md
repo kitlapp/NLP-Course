@@ -88,7 +88,7 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
    `BAAI/bge-small-en- v1.5` and stores them in a FAISS vector database for efficient similarity-based retrieval. 
     A pretrained causal language model `Qwen/Qwen3.5-0.8B` is used to generate responses based on the most relevant retrieved review chunks. Prompt engineering techniques are applied to guide the model usage of review metadata, numerical ratings, and specific fields such as side effects, effectiveness, satisfaction, and ease of use. 
     Finally, the notebook evaluates the RAG system using RAGAS metrics to measure response quality, including faithfulness and answer relevancy. The generated evaluation dataset and results are stored for reproducibility and future analysis.
-    The above notebook produces the following RAG pipeline outputs, which are shared through the Google Drive folder **`nlp_project_data`**:  
+    The above notebook produces the following RAG pipeline outputs, which are shared through the Google Drive folder `nlp_project_data`:  
 
 
 9. The above notebook produces the following feature engineering outputs, which are shared through Google Drive:
