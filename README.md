@@ -35,19 +35,19 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
 
 2. The above notebook produces three final datasets, which are shared through Google Drive due to their size:
 
-   a. `df_analytics_final.parquet`
+   a. `df_analytics_final.parquet`  
    Dataset containing valid observations that do not provide meaningful textual information for NLP tasks, 
    preserved for potential future analytical work.
 
-   b. `df_lem_final.parquet`
+   b. `df_lem_final.parquet`  
    NLP-ready dataset with lemmatized reviews, suitable for classical NLP techniques such as Bag of Words, TF-IDF, and 
    traditional machine learning models.
 
-   c. `df_non_lem_final.parquet`
+   c. `df_non_lem_final.parquet`  
    NLP-ready dataset with non-lemmatized reviews, suitable for modern NLP approaches, including deep learning and 
    transformer-based models.
 
-3. `pr_02_feature_engineering_embeddings.ipynb`
+3. `pr_02_feature_engineering_embeddings.ipynb`  
    Notebook containing text feature engineering, including TF-IDF representation, Word2Vec embedding training, and 
    related feature analysis/visualizations.
 
