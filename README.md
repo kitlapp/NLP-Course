@@ -35,7 +35,8 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
 
 2. The above notebook produces three final datasets, which are shared through Google Drive due to their size:
 
-   a. `df_analytics_final.parquet`  
+   a. `df_analytics_final.parquet`
+   
    Dataset containing valid observations that do not provide meaningful textual information for NLP tasks, 
    preserved for potential future analytical work.
 
@@ -47,11 +48,11 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
    NLP-ready dataset with non-lemmatized reviews, suitable for modern NLP approaches, including deep learning and 
    transformer-based models.
 
-3. `pr_02_feature_engineering_embeddings.ipynb`  
+4. `pr_02_feature_engineering_embeddings.ipynb`  
    Notebook containing text feature engineering, including TF-IDF representation, Word2Vec embedding training, and 
    related feature analysis/visualizations.
 
-4. The above notebook produces the following feature engineering outputs, which are shared through Google Drive:
+5. The above notebook produces the following feature engineering outputs, which are shared through Google Drive:
 
    a. `tfidf_matrix.npz`
    Sparse matrix containing the TF-IDF representation of the processed reviews. This representation is suitable for 
@@ -65,12 +66,12 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
    Trained Word2Vec model containing dense word embeddings learned from the review corpus. These embeddings can be 
    used for NLP tasks requiring semantic word representations.
 
-5. `pr_03_unsupervised_learning.ipynb`
+6. `pr_03_unsupervised_learning.ipynb`
    Notebook containing unsupervised learning techniques for topic discovery, including topic modeling approaches such 
    as Latent Dirichlet Allocation (LDA) and Non-negative Matrix Factorization (NMF), along with topic analysis, 
    visualization, and interpretation of the extracted topics.
 
-6. `pr_04_supervised_learning_xai.ipynb`
+7. `pr_04_supervised_learning_xai.ipynb`
    Notebook containing supervised learning approaches for drug review classification. Different machine learning and 
    deep learning models are applied, including Logistic Regression, Support Vector Machine (SVM), Word2Vec-based 
    classification, LSTM, and transformer-based models. The notebook focuses on training and evaluating the models, 
