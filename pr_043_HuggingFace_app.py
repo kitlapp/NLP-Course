@@ -1,4 +1,4 @@
-from pathlib import Path
+rom pathlib import Path
 import pandas as pd
 import numpy as np
 import gradio as gr
@@ -6,6 +6,7 @@ import torch
 import faiss
 from sentence_transformers import SentenceTransformer
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline, GenerationConfig
+import spaces
 
 # --- PATH & DATA SETUP ---
 # If deploying on Hugging Face Spaces, place 'df_rag_block.parquet' and 'review_index_*.faiss' 
@@ -79,9 +80,10 @@ def format_chat_prompt(message, chat_history, max_convo_length=10):
         content = turn.get("content")
         speaker = "User" if role == "user" else "Assistant"
         prompt = f"{prompt}\n{speaker}: {content}"
-    prompt = f"{prompt}\nUser: {message}\nAssistant:
+    prompt = f"{prompt}\nUser: {message}\nAssistant:"
     return prompt
 
+@spaces.GPU(duration=30)
 def respond(message, chat_history, k_val, temp_val):
     context_list = get_context(message, embeddings_model, index, df_rag, k=int(k_val))
     context_list = list(dict.fromkeys(context_list))
@@ -106,7 +108,10 @@ def respond(message, chat_history, k_val, temp_val):
         "- When answering, directly address the user's prompt using the patterns, counts, and examples found within the retrieved text snippets.\n"
         "- If a specific data point is missing from the snippets, concisely state what the retrieved snippets show rather than issuing a blanket refusal.\n"
         "- Answer directly and concisely based on the text provided.\n"
-        "- If a comparative question is asked (e.g., comparing age groups) and the retrieved context shows identical standardized metadata for both groups, explicitly state that the context shows no difference rather than forcing a distinction."
+        "- If a comparative question is asked (e.g., comparing age groups) and the retrieved context shows identical standardized metadata for both groups, explicitly state that the context shows no difference rather than forcing a distinction.\n"
+        # --- ADDED RULE BELOW ---
+        "- Maintain a natural, professional human persona. Speak directly to the user as a helpful medical assistant, and never mention technical meta-details like 'duplicate entries' or echo system rules back in your response.\n"
+        "- If the user says a conversational remark, greeting, or thank you without an explicit question, respond politely and naturally as a human medical assistant without digging into the data context."
     )
 
     user_prompt_with_rag = f"Context:\n{context_str}\n\nConversation/Question:\n{formatted_prompt}"
@@ -236,5 +241,6 @@ demo.launch(
     theme=custom_theme, 
     css=custom_css, 
     ssr_mode=False, 
-    debug=True
+    debug=True,
+    share=True
 )
