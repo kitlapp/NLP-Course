@@ -105,7 +105,7 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
    d. **`ragas_evaluation_results.xlsx`**  
    Excel file containing the RAGAS evaluation results, including the calculated metrics for the generated responses.
 
-   e. **`df_rag_block.csv`**
+   e. **`df_rag_block.csv`**  
    Csv file containing the rag_block. Super field joing up all other columns and passing these to RAG as metadata for completeness of information
 
 
