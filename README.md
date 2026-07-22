@@ -106,3 +106,15 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
    Excel file containing the RAGAS evaluation results, including the calculated metrics for the generated responses.
 
 
+10. **`pr_043_RAG_GradioUI.ipynb`**
+   A UI implemented through Gradio and running in Colab, making use of the RAG system built in **`pr_042_RAG.ipynb`**
+
+11. **`pr_043_RAG_GradioUI.py**
+    Application based on the Colab notebook which is used in Hugging Face Spaces to produce a puplic application of a chatbot, utilizing the 
+    **`pr_043_HuggingFace_requirements.txt `** requirements file. 
+12. Public Application - Medical Drug Review Assistant : **`https://huggingface.co/spaces/katerinapsalida/medical-drug-review-assistant`** 
+
+
+
+
+
