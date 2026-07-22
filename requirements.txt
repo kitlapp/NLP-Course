@@ -1,0 +1,10 @@
+gradio
+pandas
+numpy
+torch
+transformers
+accelerate
+faiss-cpu
+sentence-transformers
+python-dotenv
+spaces
