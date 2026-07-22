@@ -241,6 +241,5 @@ demo.launch(
     theme=custom_theme, 
     css=custom_css, 
     ssr_mode=False, 
-    debug=True,
-    share=True
+    debug=True
 )
