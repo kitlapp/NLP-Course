@@ -86,8 +86,8 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
 7. **`pr_042_RAG.ipynb`**  
     Notebook implementing a Retrieval-Augmented Generation (RAG) pipeline for conversational question-answering using the drug reviews dataset. The notebook transforms the processed reviews into searchable vector representations using the pretrained Hugging Face embedding model
    `BAAI/bge-small-en- v1.5` and stores them in a FAISS vector database for efficient similarity-based retrieval. 
-    A pretrained causal language model `Qwen/Qwen3.5-0.8B` is used to generate responses based on the most relevant retrieved review chunks. Prompt engineering techniques are applied to guide the model usage of review metadata, numerical ratings, and specific fields such as side effects, effectiveness, satisfaction, and ease of use. 
-    Finally, the notebook evaluates the RAG system using RAGAS metrics to measure response quality, including faithfulness and answer relevancy. The generated evaluation dataset and results are stored for reproducibility and future analysis.
+    A pretrained causal language model `Qwen/Qwen3.5-0.8B` is used to generate responses based on the most relevant retrieved review chunks. Prompt engineering techniques are applied to improve the RAG utilization of review metadata, numerical ratings, and specific fields such as side effects, effectiveness, satisfaction, and ease of use. 
+    Finally, the notebook evaluates the RAG system using RAGAS (Retrieval Augmented Generation Assessment) library, to measure response quality, including faithfulness and answer relevancy. The generated evaluation dataset and results are stored for reproducibility and future analysis.
     The above notebook produces the following RAG pipeline outputs, which are shared through the Google Drive folder `nlp_project_data`:  
 
 
@@ -105,8 +105,11 @@ the "Shared with me" section, right-click it → Organize → Add shortcut → A
    d. **`ragas_evaluation_results.xlsx`**  
    Excel file containing the RAGAS evaluation results, including the calculated metrics for the generated responses.
 
+   e. **`df_rag_block.csv`**
+   Csv file containing the rag_block. Super field joing up all other columns and passing these to RAG as metadata for completeness of information
 
-10. **`pr_043_RAG_GradioUI.ipynb`**
+
+11. **`pr_043_RAG_GradioUI.ipynb`**
     A UI implemented through Gradio and running in Colab, making use of the RAG system built in **`pr_042_RAG.ipynb`**
 
 12. **`pr_043_RAG_GradioUI.py**
